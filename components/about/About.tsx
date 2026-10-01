@@ -2,7 +2,7 @@ import FadeIn from "../common/FadeIn";
 import Section from "../common/Section";
 
 import ProfileCard from "./ProfileCard";
-import Timeline from "./Timeline";
+import Strengths from "./Strengths";
 
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
         <div className="grid gap-12 lg:grid-cols-2">
           <ProfileCard />
 
-          <Timeline />
+          <Strengths />
         </div>
       </FadeIn>
     </Section>
