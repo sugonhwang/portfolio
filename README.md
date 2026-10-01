@@ -8,6 +8,10 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 </p>
 
+<p align="center">
+  <a href="https://sghwang-portfolio.vercel.app/"><strong>🌐 Portfolio 바로가기</strong></a>
+</p>
+
 ---
 
 ## 🙋 About Me
@@ -78,5 +82,6 @@
 
 ## 📫 Contact
 
+- 🌐 Portfolio: https://sghwang-portfolio.vercel.app/
 - ✉️ Email: sugonhwang1@gmail.com
 - 🐙 GitHub: https://github.com/sugonhwang
