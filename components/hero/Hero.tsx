@@ -66,7 +66,7 @@ export default function Hero() {
                   <span className="text-zinc-500">:~$</span> whoami
                 </p>
 
-                <h1 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-6xl">황수곤</h1>
+                <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-6xl">황수곤</h1>
               </div>
 
               <div className="mt-8">
@@ -107,15 +107,15 @@ export default function Hero() {
 
           {/* Introduction */}
           <div className="lg:pl-6">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">Hello, I&apos;m Sugon</p>
+            <p className="mb-4 font-mono text-sm text-zinc-500">$ cat intro.txt</p>
 
             {/* 두 줄 고정: 줄마다 block + keep-all로 단어 중간 줄바꿈 방지, 오른쪽 좁은 컬럼(lg)에서는 폰트 크기를 한 단계 낮춤 */}
-            <h2 className="text-[min(1.75rem,6.8vw)] font-black leading-tight break-keep sm:text-5xl lg:text-[1.75rem] xl:text-4xl">
+            <h2 className="text-[min(1.75rem,6.8vw)] font-bold leading-tight break-keep sm:text-5xl lg:text-[1.75rem] xl:text-4xl">
               <span className="block">사용자에게 필요한 경험을</span>
               <span className="block text-zinc-500">코드로 만들어갑니다.</span>
             </h2>
 
-            <p className="mt-7 max-w-lg leading-8 text-zinc-400">9년간 정보보안 현장에서 서비스가 어떻게 무너지고 지켜지는지 봐왔습니다. 그 경험을 바탕으로 안전하고, 쓰기 편한 화면을 만드는 프론트엔드 개발자입니다.</p>
+            <p className="mt-7 max-w-lg leading-7 text-zinc-400">9년간 정보보안 현장에서 서비스가 어떻게 무너지고 지켜지는지 봐왔습니다. 그 경험을 바탕으로 안전하고, 쓰기 편한 화면을 만드는 프론트엔드 개발자입니다.</p>
 
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="#projects">View Projects</Button>
