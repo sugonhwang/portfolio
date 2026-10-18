@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import type { Project } from "@/data/projects";
 import Button from "../common/Button";
+import TroubleshootingList from "./TroubleshootingList";
 
 type Props = Project;
 
@@ -11,7 +12,7 @@ export default function ProjectCard({ title, summary, description, period, team,
   const [hover, setHover] = useState(false);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-orange-400/40 hover:shadow-[0_20px_60px_rgba(251,146,60,.12)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors duration-200 hover:border-orange-400/40">
       {/* Project Image: GIF는 hover 시점에만 불러와 초기 로딩을 가볍게 유지 */}
       <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-zinc-900" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         {thumbnail && <Image src={thumbnail} alt={`${title} 화면`} fill sizes="(max-width: 640px) 85vw, 420px" className={`object-cover transition-all duration-500 ${hover && preview ? "scale-105 opacity-0" : "scale-100 opacity-100"}`} />}
@@ -44,12 +45,7 @@ export default function ProjectCard({ title, summary, description, period, team,
           ))}
         </ul>
 
-        {troubleshooting && (
-          <p className="mt-4 rounded-xl border border-white/10 bg-white/5 p-3 text-sm leading-6 text-zinc-400">
-            <span className="font-semibold text-orange-400">Troubleshooting · </span>
-            {troubleshooting}
-          </p>
-        )}
+        {troubleshooting && <TroubleshootingList items={troubleshooting} className="mt-4" />}
 
         <div className="mt-6 flex flex-wrap gap-2">
           {stack.map((tech) => (

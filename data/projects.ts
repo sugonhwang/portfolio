@@ -1,3 +1,8 @@
+export interface Troubleshooting {
+  problem: string;
+  solution: string;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -8,7 +13,7 @@ export interface Project {
   stack: string[];
   role: string;
   contributions: string[];
-  troubleshooting?: string;
+  troubleshooting?: Troubleshooting[];
   github: string;
   demo: string;
   thumbnail?: string;
@@ -34,7 +39,20 @@ export const projects: Project[] = [
       "스위치별 타건음 선택·재생과 메인 사운드 ON/OFF 토글 구현",
       "찜하기 실시간 동기화 및 위시리스트 비교 모달 실데이터 연동",
     ],
-    troubleshooting: "스위치 수정 화면에서 기존에 등록된 사운드가 보이지 않던 문제와, 가격 데이터가 없을 때 상품 카드에 0원이 표시되던 문제를 수정했습니다.",
+    troubleshooting: [
+      {
+        problem: "모바일에서 타건음이 늦게 재생됨",
+        solution: "키를 누를 때마다 new Audio()로 파일을 새로 불러오던 구조를 Web Audio API로 바꿔, 타건음을 미리 받아 디코딩해 두고 메모리에서 바로 재생하도록 개선했습니다.",
+      },
+      {
+        problem: "키 눌림 표시가 풀리지 않음 (Mac Cmd 조합, 창 전환)",
+        solution: "이 상황에서는 keyup 이벤트가 오지 않는다는 원인을 찾아, Cmd 조합 키는 표시하지 않고 blur · visibilitychange 시점에 눌림 상태를 초기화했습니다.",
+      },
+      {
+        problem: "전역 키 입력 처리가 Tab 포커스 이동과 버튼 조작을 가로챔",
+        solution: "Tab은 브라우저 기본 동작에 맡기고, 버튼 · 링크에 포커스가 있을 때는 Enter · Space · 방향키를 처리하지 않도록 분기해 키보드 접근성을 복구했습니다.",
+      },
+    ],
     github: "https://github.com/KEY-TAP/KEYTAP",
     demo: "https://keytap-mu.vercel.app/",
     logo: "/images/projects/keytap-logo.png",
@@ -57,7 +75,12 @@ export const projects: Project[] = [
       "모달·라디오·체크박스·수량 버튼·사운드 토글 등 공통 컴포넌트 구현",
       "Next.js 보안 취약점 공지에 따라 버전 업데이트(15.3.5 → 15.3.8)",
     ],
-    troubleshooting: "주소 API를 사용하면 회원가입이 실패하던 문제를, 폼 데이터에 우편번호 필드가 빠져 있던 원인을 찾아 해결했습니다.",
+    troubleshooting: [
+      {
+        problem: "주소 검색 API를 사용하면 회원가입이 실패함",
+        solution: "폼 데이터에 우편번호 필드가 빠져 있던 원인을 찾아 전송 데이터에 추가했습니다.",
+      },
+    ],
     github: "https://github.com/sugonhwang/Final-15-HOLATAJA",
     demo: "https://final-15-holataja.vercel.app/products",
     thumbnail: "/images/projects/holataja.png",

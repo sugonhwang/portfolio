@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import Button from "../common/Button";
+import TroubleshootingList from "./TroubleshootingList";
 
 export default function FeaturedProject() {
   const project = projects.find((item) => item.featured);
@@ -35,12 +36,7 @@ export default function FeaturedProject() {
             ))}
           </ul>
 
-          {project.troubleshooting && (
-            <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-zinc-400">
-              <span className="font-semibold text-orange-400">Troubleshooting · </span>
-              {project.troubleshooting}
-            </div>
-          )}
+          {project.troubleshooting && <TroubleshootingList items={project.troubleshooting} className="mt-6" />}
 
           <div className="mt-6 flex flex-wrap gap-2">
             {project.stack.map((tech) => (
@@ -61,7 +57,7 @@ export default function FeaturedProject() {
 
         <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} 사이트 열기`} className="group flex min-h-64 items-center justify-center bg-[#0B0F14] p-8 sm:p-12">
           {project.logo && (
-            <div className="w-full max-w-md rounded-2xl bg-zinc-100 px-8 py-12 shadow-[0_20px_60px_rgba(251,146,60,.12)] transition duration-300 group-hover:-translate-y-1 sm:px-12 sm:py-16">
+            <div className="w-full max-w-md rounded-2xl bg-zinc-100 px-8 py-12 transition-colors duration-200 group-hover:bg-white sm:px-12 sm:py-16">
               <Image src={project.logo} alt={`${project.title} 로고`} width={1111} height={225} className="h-auto w-full" preload />
             </div>
           )}
