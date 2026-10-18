@@ -9,25 +9,38 @@ export default function FeaturedProject() {
   if (!project) return null;
 
   return (
-    <section id={`project-${project.ls.slug}`} className="scroll-mt-20 mb-20 overflow-hidden rounded-3xl border border-orange-400/20 bg-gradient-to-br from-[#161B22] to-[#0D1117]">
+    // 다른 섹션과 같은 터미널 창 형식에, 주황 테두리와 제목 표시줄로 대표 프로젝트임을 구분
+    <section id={`project-${project.ls.slug}`} aria-label={`대표 프로젝트: ${project.title}`} className="scroll-mt-20 mb-20 overflow-hidden rounded-2xl border border-orange-400/70 bg-[#0D1117] shadow-[0_30px_80px_rgba(0,0,0,.45)]">
+      <div className="flex items-center justify-between border-b border-orange-400/40 bg-[#161B22] px-5 py-3">
+        <div className="flex gap-2" aria-hidden="true">
+          <div className="h-3 w-3 rounded-full bg-red-400" />
+          <div className="h-3 w-3 rounded-full bg-yellow-400" />
+          <div className="h-3 w-3 rounded-full bg-green-400" />
+        </div>
+
+        <p className="font-mono text-sm text-zinc-400">
+          ~/projects/{project.ls.slug} <span className="text-zinc-600">—</span> <span className="font-semibold text-orange-400">featured</span>
+        </p>
+
+        <div className="w-10" />
+      </div>
+
       <div className="grid lg:grid-cols-2">
         <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
-          <span className="mb-4 inline-flex w-fit rounded-full bg-orange-400 px-3 py-1 text-xs font-bold text-black">FEATURED PROJECT</span>
-
-          <h3 className="text-4xl font-black sm:text-5xl">{project.title}</h3>
+          <h3 className="text-4xl font-bold sm:text-5xl">{project.title}</h3>
 
           <p className="mt-3 font-mono text-sm text-zinc-500">
             {project.period} · {project.team}
           </p>
 
-          <p className="mt-6 leading-8 text-zinc-300">{project.description}</p>
+          <p className="mt-6 leading-7 text-zinc-300">{project.description}</p>
 
           <div className="mt-8">
             <p className="text-sm font-semibold text-orange-400">담당</p>
             <p className="mt-2 leading-7 text-zinc-300">{project.role}</p>
           </div>
 
-          <ul className="mt-6 space-y-2 text-sm leading-7 text-zinc-400">
+          <ul className="mt-6 space-y-2 text-sm leading-6 text-zinc-400">
             {project.contributions.map((item) => (
               <li key={item} className="flex gap-2">
                 <span className="text-orange-400">▸</span>
@@ -38,13 +51,9 @@ export default function FeaturedProject() {
 
           {project.troubleshooting && <TroubleshootingList items={project.troubleshooting} repoUrl={project.github} className="mt-6" />}
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
-              <span key={tech} className="rounded-lg border border-white/10 px-3 py-1 text-sm text-zinc-300">
-                {tech}
-              </span>
-            ))}
-          </div>
+          <p className="mt-6 font-mono text-sm leading-6 text-zinc-400">
+            <span className="text-orange-400">stack</span>: {project.stack.join(" · ")}
+          </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={project.demo}>Live Demo</Button>

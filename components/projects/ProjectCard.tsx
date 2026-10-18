@@ -15,7 +15,7 @@ export default function ProjectCard({ ls, title, summary, description, period, t
     <article id={`project-${ls.slug}`} className="scroll-mt-20 group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors duration-200 hover:border-orange-400/40">
       {/* Project Image: GIF는 hover 시점에만 불러와 초기 로딩을 가볍게 유지 */}
       <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-zinc-900" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-        {thumbnail && <Image src={thumbnail} alt={`${title} 화면`} fill sizes="(max-width: 640px) 85vw, 420px" className={`object-cover transition-all duration-500 ${hover && preview ? "scale-105 opacity-0" : "scale-100 opacity-100"}`} />}
+        {thumbnail && <Image src={thumbnail} alt={`${title} 화면`} fill sizes="(max-width: 640px) 85vw, 420px" className={`object-cover transition-[opacity,transform] duration-200 ease-out ${hover && preview ? "scale-105 opacity-0" : "scale-100 opacity-100"}`} />}
 
         {preview && hover && <Image src={preview} alt={`${title} 동작 미리보기`} fill unoptimized sizes="420px" className="scale-105 object-cover" />}
       </div>
@@ -47,13 +47,9 @@ export default function ProjectCard({ ls, title, summary, description, period, t
 
         {troubleshooting && <TroubleshootingList items={troubleshooting} repoUrl={github} className="mt-4" />}
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {stack.map((tech) => (
-            <span key={tech} className="rounded-lg border border-white/10 px-3 py-1 text-sm text-zinc-300">
-              {tech}
-            </span>
-          ))}
-        </div>
+        <p className="mt-6 font-mono text-sm leading-6 text-zinc-400">
+          <span className="text-orange-400">stack</span>: {stack.join(" · ")}
+        </p>
 
         <div className="mt-auto flex gap-3 pt-8">
           <Button href={github}>GitHub</Button>
