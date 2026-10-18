@@ -115,7 +115,7 @@ export default function Hero() {
               <span className="block text-zinc-500">코드로 만들어갑니다.</span>
             </h2>
 
-            <p className="mt-7 max-w-lg leading-7 text-zinc-400">9년간 정보보안 현장에서 서비스가 어떻게 무너지고 지켜지는지 봐왔습니다. 그 경험을 바탕으로 안전하고, 쓰기 편한 화면을 만드는 프론트엔드 개발자입니다.</p>
+            <p className="mt-7 max-w-lg leading-7 text-zinc-400">9년간 보안 담당자로 서비스를 점검하고 지켜왔습니다. 이제는 그 시선으로, 기능이 돌아가는 것을 넘어 권한·입력·예외 상황까지 챙기는 프론트엔드 개발을 합니다.</p>
 
             <div className="mt-9 flex flex-wrap gap-3">
               <Button href="#projects">View Projects</Button>

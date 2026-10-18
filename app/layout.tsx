@@ -3,7 +3,7 @@ import "./globals.css";
 
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000";
 
-const description = "9년 차 정보보안 경력을 바탕으로 안전하고 쓰기 편한 화면을 만드는 프론트엔드 개발자 황수곤의 포트폴리오";
+const description = "9년간 보안 담당자로 서비스를 지켜온 경험으로, 권한·입력·예외 상황까지 챙기는 프론트엔드 개발자 황수곤의 포트폴리오";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

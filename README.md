@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Sugon Hwang</h1>
-<h3 align="center">정보보안 9년, 이제는 안전하고 쓰기 편한 화면을 만드는 프론트엔드 개발자입니다</h3>
+<h3 align="center">9년간 서비스를 점검하고 지켜온 보안 담당자, 이제는 권한·입력·예외 상황까지 챙기는 프론트엔드 개발자입니다</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -17,7 +17,7 @@
 ## 🙋 About Me
 
 - 💼 정보보안 분야에서 9년간 보안관제, 보안솔루션 운영, ISMS / ISO 27001 인증 대응을 해왔고, 지금은 **React / Next.js / TypeScript / Tailwind CSS** 기반의 프론트엔드 개발자로 커리어를 전환했습니다.
-- 🔍 서비스가 어디서 무너지는지 봐온 경험을 바탕으로, 안전하고 쓰기 편한 화면을 만드는 데 집중합니다.
+- 🔍 9년간 보안 담당자로 서비스를 점검하고 지켜왔습니다. 이제는 그 시선으로, 기능이 돌아가는 것을 넘어 권한·입력·예외 상황까지 챙기는 프론트엔드 개발을 합니다.
 - 🌱 팀 프로젝트에서 기획부터 개발, 배포까지 전체 흐름을 경험했고, 현재는 Keytap 팀장 · 기획 리드로 서비스를 만들고 있습니다.
 
 ---
