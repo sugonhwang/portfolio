@@ -15,13 +15,16 @@ body {
   font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/* base 레이어에 두어야 Tailwind 유틸리티(text-orange-400 등)가 링크 색을 덮어쓸 수 있음 */
+@layer base {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-button {
-  cursor: pointer;
+  button {
+    cursor: pointer;
+  }
 }
 
 ::selection {
