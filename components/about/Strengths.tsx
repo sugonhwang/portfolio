@@ -32,7 +32,7 @@ export default function Strengths() {
               <p className="font-semibold">
                 <span className="text-green-400">[OK]</span> <span className="text-white">{title}</span>
               </p>
-              <p className="mt-2 pl-[3.25rem] font-sans text-sm leading-7 text-zinc-400 break-keep">{desc}</p>
+              <p className="mt-2 pl-[3.25rem] font-sans text-sm leading-6 text-zinc-400 break-keep">{desc}</p>
             </li>
           ))}
         </ul>

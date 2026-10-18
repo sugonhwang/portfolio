@@ -16,7 +16,7 @@ export default function Experience() {
               </div>
 
               <div>
-                <p className="leading-7 text-zinc-300">{item.description}</p>
+                <p className="max-w-[65ch] leading-7 text-zinc-300">{item.description}</p>
 
                 <ul className="mt-4 grid gap-2 text-sm leading-6 text-zinc-400 md:grid-cols-2">
                   {item.highlights.map((highlight) => (
