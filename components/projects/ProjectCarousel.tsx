@@ -38,9 +38,12 @@ export default function ProjectCarousel() {
   return (
     <>
       <div className="mb-8 flex items-center justify-between">
-        <div className="flex gap-2">
+        {/* 점은 작게 보이되, 누르는 영역은 44px로 확보 */}
+        <div className="-ml-3 flex">
           {items.map((project, index) => (
-            <button key={project.id} type="button" onClick={() => scrollTo(index)} aria-label={`${project.title} 보기`} aria-current={selected === index} className={`h-2 rounded-full transition-all duration-300 ${selected === index ? "w-10 bg-orange-400" : "w-2 bg-zinc-700 hover:bg-zinc-500"}`} />
+            <button key={project.id} type="button" onClick={() => scrollTo(index)} aria-label={`${project.title} 보기`} aria-current={selected === index} className="group flex h-11 min-w-11 items-center justify-center px-3">
+              <span className={`block h-2 rounded-full transition-colors duration-200 ${selected === index ? "w-10 bg-orange-400" : "w-2 bg-zinc-700 group-hover:bg-zinc-500"}`} />
+            </button>
           ))}
         </div>
 
