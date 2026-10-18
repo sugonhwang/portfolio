@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* 터미널 영역 고정폭 글꼴: 한글까지 고정폭인 D2Coding(OFL)을 직접 호스팅해 OS마다 다르게 보이지 않게 함 */
+@font-face {
+  font-family: "D2Coding";
+  src: url("/fonts/D2Coding.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "D2Coding";
+  src: url("/fonts/D2Coding-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: "D2Coding", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 html {
   scroll-behavior: smooth;
 }
