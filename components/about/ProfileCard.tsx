@@ -41,8 +41,6 @@ export default function ProfileCard() {
         </div>
 
         <p className="pt-2 leading-7 text-zinc-400">보안의 관점에서 서비스를 이해하고, 사용자의 관점에서 웹을 만드는 개발자를 목표로 하고 있습니다.</p>
-
-        <p className="animate-pulse text-orange-400">▋</p>
       </div>
     </TerminalWindow>
   );

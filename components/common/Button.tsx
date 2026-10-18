@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function Button({ children, href, variant = "primary" }: Props) {
-  const className = clsx("group relative inline-flex items-center justify-center overflow-hidden rounded-xl px-7 py-3 text-sm font-semibold transition-all duration-300", variant === "primary" ? "bg-orange-400 text-black hover:-translate-y-1 hover:bg-orange-300" : "border border-white/10 bg-white/5 text-white hover:-translate-y-1 hover:border-orange-400 hover:text-orange-400");
+  const className = clsx("group relative inline-flex items-center justify-center overflow-hidden rounded-xl px-7 py-3 text-sm font-semibold transition-colors duration-200", variant === "primary" ? "bg-orange-400 text-black hover:bg-orange-300" : "border border-white/10 bg-white/5 text-white hover:border-orange-400 hover:text-orange-400");
 
   const isExternal = /^https?:\/\//.test(href);
   const isAnchor = href.startsWith("#");

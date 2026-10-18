@@ -6,7 +6,7 @@ import ProjectCarousel from "./ProjectCarousel";
 
 export default function Projects() {
   return (
-    <Section id="projects" title="Projects" subtitle="Featured Work">
+    <Section id="projects" title="Projects" command="ls projects/">
       <FadeIn>
         <FeaturedProject />
 

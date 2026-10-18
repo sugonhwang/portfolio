@@ -4,7 +4,7 @@ import Section from "../common/Section";
 
 export default function Experience() {
   return (
-    <Section id="experience" title="Experience" subtitle="$ git log --career">
+    <Section id="experience" title="Experience" command="git log --career">
       <FadeIn>
         <ol className="space-y-6">
           {experiences.map((item) => (

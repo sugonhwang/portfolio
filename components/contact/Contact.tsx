@@ -4,27 +4,32 @@ import TerminalWindow from "../common/TerminalWindow";
 
 import { social } from "@/data/social";
 
+const links = [
+  { label: "github", text: "github.com/sugonhwang", href: social.github, external: true },
+  { label: "email", text: social.email, href: `mailto:${social.email}`, external: false },
+  { label: "resume", text: "resume.pdf", href: social.resume, external: true },
+];
+
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact" subtitle="$ contact --help">
+    <Section id="contact" title="Contact" command="contact --help">
       <FadeIn>
         <TerminalWindow title="contact.sh">
-          <div className="space-y-5 break-all font-mono">
-            <p className="text-orange-400">$ contact --help</p>
+          <div className="font-mono">
+            <p className="text-zinc-500">Usage: contact [option]</p>
 
-            <a href={social.github} target="_blank" rel="noopener noreferrer" className="block transition hover:text-orange-400">
-              💻 GitHub <span className="text-zinc-500">— github.com/sugonhwang</span>
-            </a>
-
-            <a href={`mailto:${social.email}`} className="block transition hover:text-orange-400">
-              📧 Email <span className="text-zinc-500">— {social.email}</span>
-            </a>
-
-            <a href={social.resume} target="_blank" rel="noopener noreferrer" className="block transition hover:text-orange-400">
-              📄 Resume
-            </a>
-
-            <span className="animate-pulse text-orange-400">▋</span>
+            <dl className="mt-6 grid grid-cols-[5.5rem_1fr] gap-y-4 sm:grid-cols-[7rem_1fr]">
+              {links.map(({ label, text, href, external }) => (
+                <div key={label} className="contents">
+                  <dt className="text-orange-400">--{label}</dt>
+                  <dd className="break-all">
+                    <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="underline-offset-4 transition-colors hover:text-orange-400 hover:underline">
+                      {text}
+                    </a>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </TerminalWindow>
       </FadeIn>

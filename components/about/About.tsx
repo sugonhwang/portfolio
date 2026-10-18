@@ -6,7 +6,7 @@ import Strengths from "./Strengths";
 
 export default function About() {
   return (
-    <Section id="about" title="About" subtitle="$ cat profile">
+    <Section id="about" title="About" command="cat profile">
       <FadeIn>
         <div className="grid gap-12 lg:grid-cols-2">
           <ProfileCard />

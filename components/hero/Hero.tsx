@@ -39,10 +39,6 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden py-20">
-      {/* Background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-400/5 blur-[120px]" />
-      </div>
 
       <div className="relative w-full">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
@@ -104,7 +100,7 @@ export default function Hero() {
 
               <div className="mt-8">
                 <span className="text-green-400">sugon@portfolio</span>
-                <span className="text-zinc-500">:~$</span> <span className="animate-pulse">_</span>
+                <span className="text-zinc-500">:~$</span> <span className="text-zinc-500">_</span>
               </div>
             </div>
           </div>
@@ -128,25 +124,7 @@ export default function Hero() {
                 Resume
               </Button>
             </div>
-
-            {/* Tech badges */}
-            <div className="mt-12 flex flex-wrap gap-2">
-              {["React", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"].map((tech) => (
-                <span key={tech} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-zinc-400 transition hover:border-orange-400/40 hover:text-orange-400">
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="mt-16 flex justify-center">
-          <a href="#about" className="group flex flex-col items-center gap-3 text-xs text-zinc-600 transition hover:text-zinc-300">
-            <span>SCROLL TO EXPLORE</span>
-
-            <span className="h-10 w-px bg-zinc-700 transition group-hover:bg-orange-400" />
-          </a>
         </div>
       </div>
     </section>
