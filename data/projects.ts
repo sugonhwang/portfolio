@@ -22,6 +22,8 @@ export interface Project {
   preview?: string;
   logo?: string;
   featured?: boolean;
+  /** ls -l 요약 표에 쓰는 짧은 정보 */
+  ls: { slug: string; period: string; size: string; role: string };
   /** 이 프로젝트에서 내가 작성한 커밋 목록 주소 */
   commitsUrl?: string;
 }
@@ -64,6 +66,7 @@ export const projects: Project[] = [
     demo: "https://keytap-mu.vercel.app/",
     logo: "/images/projects/keytap-logo.png",
     featured: true,
+    ls: { slug: "keytap", period: "2026.02–진행 중", size: "3인", role: "팀장 · 기획 · FE" },
     commitsUrl: "https://github.com/KEY-TAP/KEYTAP/commits?author=sugonhwang",
   },
 
@@ -93,6 +96,7 @@ export const projects: Project[] = [
     demo: "https://final-15-holataja.vercel.app/products",
     thumbnail: "/images/projects/holataja.png",
     preview: "/images/projects/holataja.gif",
+    ls: { slug: "holataja", period: "2025.07–2025.08", size: "4인", role: "FE (장바구니 · 결제 · 회원가입)" },
   },
 
   {
@@ -109,5 +113,6 @@ export const projects: Project[] = [
     demo: "https://js-focustime.netlify.app/",
     thumbnail: "/images/projects/focus-time.png",
     preview: "/images/projects/focus-time.gif",
+    ls: { slug: "focus-time", period: "2025.09", size: "4인", role: "FE (투두리스트)" },
   },
 ];

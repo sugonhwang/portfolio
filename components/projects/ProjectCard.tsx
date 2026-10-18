@@ -8,11 +8,11 @@ import TroubleshootingList from "./TroubleshootingList";
 
 type Props = Project;
 
-export default function ProjectCard({ title, summary, description, period, team, stack, role, contributions, troubleshooting, github, demo, thumbnail, preview }: Props) {
+export default function ProjectCard({ ls, title, summary, description, period, team, stack, role, contributions, troubleshooting, github, demo, thumbnail, preview }: Props) {
   const [hover, setHover] = useState(false);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors duration-200 hover:border-orange-400/40">
+    <article id={`project-${ls.slug}`} className="scroll-mt-20 group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-colors duration-200 hover:border-orange-400/40">
       {/* Project Image: GIF는 hover 시점에만 불러와 초기 로딩을 가볍게 유지 */}
       <div className="relative aspect-video overflow-hidden border-b border-white/10 bg-zinc-900" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         {thumbnail && <Image src={thumbnail} alt={`${title} 화면`} fill sizes="(max-width: 640px) 85vw, 420px" className={`object-cover transition-all duration-500 ${hover && preview ? "scale-105 opacity-0" : "scale-100 opacity-100"}`} />}

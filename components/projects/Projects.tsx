@@ -2,12 +2,17 @@ import FadeIn from "../common/FadeIn";
 import Section from "../common/Section";
 
 import FeaturedProject from "./FeaturedProject";
+import ProjectList from "./ProjectList";
 import ProjectCarousel from "./ProjectCarousel";
 
 export default function Projects() {
   return (
-    <Section id="projects" title="Projects" command="ls projects/">
+    <Section id="projects" title="Projects" command="ls -l projects/">
       <FadeIn>
+        <div className="mb-16">
+          <ProjectList />
+        </div>
+
         <FeaturedProject />
 
         <div className="mb-8">

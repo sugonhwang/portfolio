@@ -9,7 +9,7 @@ export default function FeaturedProject() {
   if (!project) return null;
 
   return (
-    <section className="mb-20 overflow-hidden rounded-3xl border border-orange-400/20 bg-gradient-to-br from-[#161B22] to-[#0D1117]">
+    <section id={`project-${project.ls.slug}`} className="scroll-mt-20 mb-20 overflow-hidden rounded-3xl border border-orange-400/20 bg-gradient-to-br from-[#161B22] to-[#0D1117]">
       <div className="grid lg:grid-cols-2">
         <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
           <span className="mb-4 inline-flex w-fit rounded-full bg-orange-400 px-3 py-1 text-xs font-bold text-black">FEATURED PROJECT</span>
