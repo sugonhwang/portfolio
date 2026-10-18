@@ -45,7 +45,7 @@ export default function ProjectCard({ title, summary, description, period, team,
           ))}
         </ul>
 
-        {troubleshooting && <TroubleshootingList items={troubleshooting} className="mt-4" />}
+        {troubleshooting && <TroubleshootingList items={troubleshooting} repoUrl={github} className="mt-4" />}
 
         <div className="mt-6 flex flex-wrap gap-2">
           {stack.map((tech) => (
