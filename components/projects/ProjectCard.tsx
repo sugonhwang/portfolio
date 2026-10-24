@@ -52,7 +52,7 @@ export default function ProjectCard({ ls, title, summary, description, period, t
         </p>
 
         <div className="mt-auto flex gap-3 pt-8">
-          <Button href={github}>GitHub</Button>
+          {github && <Button href={github}>GitHub</Button>}
 
           <Button href={demo} variant="outline">
             Live Demo

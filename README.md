@@ -24,7 +24,7 @@
 
 ## 🧩 Projects
 
-### ⌨️ [KEYTAP](https://github.com/KEY-TAP/KEYTAP) — Featured
+### ⌨️ [KEYTAP](https://keytap-mu.vercel.app/) — Featured
 
 > 타건음 · 타건감 데이터로 취향에 맞는 키보드를 찾는 커뮤니티 기반 타건 콘텐츠 플랫폼
 

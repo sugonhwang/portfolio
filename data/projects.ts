@@ -16,7 +16,8 @@ export interface Project {
   role: string;
   contributions: string[];
   troubleshooting?: Troubleshooting[];
-  github: string;
+  /** 소스 공개 저장소. 비공개로 두는 프로젝트는 생략 */
+  github?: string;
   demo: string;
   thumbnail?: string;
   preview?: string;
@@ -24,8 +25,6 @@ export interface Project {
   featured?: boolean;
   /** ls -l 요약 표에 쓰는 짧은 정보 */
   ls: { slug: string; period: string; size: string; role: string };
-  /** 이 프로젝트에서 내가 작성한 커밋 목록 주소 */
-  commitsUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -48,26 +47,21 @@ export const projects: Project[] = [
     troubleshooting: [
       {
         problem: "모바일에서 타건음이 늦게 재생됨",
-        commit: "a65bf44",
         solution: "키를 누를 때마다 new Audio()로 파일을 새로 불러오던 구조를 Web Audio API로 바꿔, 타건음을 미리 받아 디코딩해 두고 메모리에서 바로 재생하도록 개선했습니다.",
       },
       {
         problem: "키 눌림 표시가 풀리지 않음 (Mac Cmd 조합, 창 전환)",
-        commit: "4376b4c",
         solution: "이 상황에서는 keyup 이벤트가 오지 않는다는 원인을 찾아, Cmd 조합 키는 표시하지 않고 blur · visibilitychange 시점에 눌림 상태를 초기화했습니다.",
       },
       {
         problem: "전역 키 입력 처리가 Tab 포커스 이동과 버튼 조작을 가로챔",
-        commit: "c01f635",
         solution: "Tab은 브라우저 기본 동작에 맡기고, 버튼 · 링크에 포커스가 있을 때는 Enter · Space · 방향키를 처리하지 않도록 분기해 키보드 접근성을 복구했습니다.",
       },
     ],
-    github: "https://github.com/KEY-TAP/KEYTAP",
     demo: "https://keytap-mu.vercel.app/",
     logo: "/images/projects/keytap-logo.png",
     featured: true,
     ls: { slug: "keytap", period: "2026.02–진행 중", size: "3인", role: "팀장 · 기획 · FE" },
-    commitsUrl: "https://github.com/KEY-TAP/KEYTAP/commits?author=sugonhwang",
   },
 
   {

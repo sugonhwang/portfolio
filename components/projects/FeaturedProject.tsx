@@ -49,7 +49,7 @@ export default function FeaturedProject() {
             ))}
           </ul>
 
-          {project.troubleshooting && <TroubleshootingList items={project.troubleshooting} repoUrl={project.github} className="mt-6" />}
+          {project.troubleshooting && <TroubleshootingList items={project.troubleshooting} className="mt-6" />}
 
           <p className="mt-6 font-mono text-sm leading-6 text-zinc-400">
             <span className="text-orange-400">stack</span>: {project.stack.join(" · ")}
@@ -58,18 +58,12 @@ export default function FeaturedProject() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={project.demo}>Live Demo</Button>
 
-            <Button href={project.github} variant="outline">
-              GitHub
-            </Button>
+            {project.github && (
+              <Button href={project.github} variant="outline">
+                GitHub
+              </Button>
+            )}
           </div>
-
-          {project.commitsUrl && (
-            <a href={project.commitsUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center gap-2 font-mono text-sm text-zinc-500 transition-colors hover:text-orange-400">
-              <span className="text-green-400">$</span> git log --author=sugonhwang
-              <span aria-hidden="true">↗</span>
-              <span className="sr-only">(GitHub에서 내가 작성한 커밋 전체 보기, 새 탭)</span>
-            </a>
-          )}
         </div>
 
         <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} 사이트 열기`} className="group flex min-h-64 items-center justify-center bg-[#0B0F14] p-8 sm:p-12">
